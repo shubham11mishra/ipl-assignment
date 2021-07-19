@@ -1,0 +1,18 @@
+[{
+    "id":1,
+    "fullName":"Chennai Super Kings",
+    "key":"CSK",
+    "teamIcon":"https://i.pinimg.com/originals/28/09/a8/2809a841bb08827603ccac5c6aee8b33.png",
+    "championshipWon":3,
+    "color":"#F8611A"
+
+},{
+    "id":2,
+    "fullName":"Mumbai Indians",
+    "key":"MI",
+    "teamIcon":"https://i.pinimg.com/originals/28/09/a8/2809a841bb08827603ccac5c6aee8b33.png",
+    "championshipWon":3,
+    "color":"#00487C"
+   
+
+}]

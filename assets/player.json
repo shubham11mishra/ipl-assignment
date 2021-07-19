@@ -1,0 +1,21 @@
+[{
+    "id":1,
+    "playerName":"Rohit Sharma",
+    "from":"MI",
+    "price":"6.50 Cr",
+    "img":"https://static.iplt20.com/players/210/107.png",
+    "isPlaying":true,
+    "description":"All-rounder",
+    "runScore":"200",
+    "Wicket":"1"
+},{
+    "id":2,
+    "playerName":"Rohit Sharma",
+    "from":"CSK",
+    "price":"6.50 Cr",
+    "img":"https://static.iplt20.com/players/210/1.png",
+    "isPlaying":true,
+    "description":"All-rounder",
+    "runScore":"20",
+    "Wicket":"10"
+}]

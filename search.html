@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button
+              type="button"
+              class="navbar-toggle"
+              data-toggle="collapse"
+              data-target="#myNavbar"
+            >
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="./">IPL Dream Team</a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="./">HOME</a></li>
+            
+              <li><a href="#topbatsman">TOP BATSMAN</a></li>
+              <li><a href="#topbowler">Top BOWLERS</a></li>
+              <li><a href="./add-team.html">ADD NEW TEAM</a></li>
+              <li><a href="./add-player.html">ADD NEW PLAYER</a></li>
+            </ul>
+            <form class="navbar-form navbar-right" action="http://127.0.0.1:5500/ipl/search.html">
+              <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="Search" />
+                <div class="input-group-btn">
+                  <button class="btn btn-default" type="submit">
+                    <i class="glyphicon glyphicon-search"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </nav>
+    <div class="jumbotron text-center">
+      <h1>IPL <span>Play Bowled'!</span></h1>
+      <p>"Yatra Pratibha Avsara Prapnotihi"</p>
+    </div>
+    <section class="page-section" id="team">
+      <div class="container">
+        <div class="text-center">
+          <h3 class="section-heading text-uppercase">Search Result</h3>
+          <hr />
+        </div>
+
+        <div class="row text-center">
+          <div class="row" id="playerlistlist"></div>
+        </div>
+      </div>
+    </section>
+    <footer class="container-fluid text-center">
+      <a href="#myPage" title="To Top">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+      </a>
+      <p>
+        Bootstrap Theme Made By
+        <a href="https://www.w3schools.com" title="Visit w3schools"
+          >www.w3schools.com</a
+        >
+      </p>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="./assets/js/common.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="./assets/js/tilt.js"></script>
+    <script>
+      $(document).ready(() => {
+        teams = JSON.parse(localStorage.getItem("teams"));
+        players = JSON.parse(localStorage.getItem("players"));
+        var getTeamDetail = (teamid) => {
+          return teams.filter((team) => team.key == teamid);
+        };
+        var getplayerList = (teamid) => {
+          return players.filter((player) => player.from == teamid);
+        };
+
+        var x = $(location).attr("search").split("=")[1];
+
+        let teamDetail = getTeamDetail(x.toUpperCase());
+        let playerList = getplayerList(x.toUpperCase());
+        console.log(playerList.length);
+        if (playerList.length <= 0) {
+          $("#playerlistlist").html(`<div class="col-xs-12  text-center">
+            <h2 style="padding:100px">No match found !</h2>
+            <div>
+            `);
+        } else {
+          
+          playerList.forEach((player) => {
+            let teamD = getTeamDetail(player.from);
+            $("#playerlistlist").append(`
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                <a href="./player-details.html?id=${player.id}">
+                <div class="cardcus" id="player${player.id}">
+                 <div class="imgbox">
+                     <img src="${player.img}" alt="">
+                 </div>
+                 <div class="contentbox">
+                     <h2 class="name">${player.playerName}</h2>
+                     <div class="summery">
+                         <div>
+                            <h3>${player.runScore}</h3>
+                            <span>RUNS</span>
+                         </div>
+                         <div>
+                            <h3>${player.Wicket}</h3>
+                            <span>WICKETS</span>
+                         </div>
+
+                     </div>
+                     
+                 </div>
+                 <a href="./player-details.html?id=${player.id}" class="player-detail">View Profile</a>
+                </div>
+                </a>
+              </div>
+        
+          `);
+            $("body").append(
+              `<style>#player${player.id}::before{background:linear-gradient(134deg,${teamD[0].color} ,${teamD[0].color})}</style>`
+            );
+          });
+          VanillaTilt.init(document.querySelectorAll(".cardcus"), {
+            max: 25,
+            speed: 400,
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

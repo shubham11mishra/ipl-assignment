@@ -1,0 +1,658 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+* {
+  font-family: "Poppins", sans-serif;
+}
+h1,h2,h3{
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 4px;
+}
+a:hover {
+  text-decoration: none;
+}
+
+.team-img {
+  display: block;
+  width: 132px;
+  height: 132px;
+  /* background-position: -528px -264px; */
+  background-position: -132px 0;
+}
+.box {
+  width: 100%;
+
+  height: 300px;
+  background: linear-gradient(134deg, rgb(248, 97, 0), rgb(248, 97, 80));
+
+  border-radius: 20px;
+}
+.box::before {
+  content: attr(data-content);
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 6em;
+  font-weight: 900;
+  color: white;
+  /* font-style: italic; */
+
+  opacity: 0.5;
+  transition: 0.5s;
+}
+.box:hover::before {
+  opacity: 0.2;
+}
+.box .name {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  color: white;
+  transform-style: preserve-3d;
+  transform: translate3d(0, 0, 75px);
+  transition: 0.5s;
+  opacity: 0;
+  z-index: 10;
+  font-size: 24px;
+}
+.box:hover .name {
+  top: 20px;
+  opacity: 1;
+}
+.box .team-detail {
+  position: absolute;
+  display: block;
+  bottom: 0px;
+  width: 80%;
+  left: 10%;
+  transform-style: preserve-3d;
+  transform: translate3d(0, 0, 75px);
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(134deg, rgb(248, 27, 0), rgb(248, 97, 0));
+  padding: 10px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.5s;
+  opacity: 0;
+  z-index: 10;
+}
+.btncus{
+ 
+  display: block;
+ 
+  transform-style: preserve-3d;
+  transform: translate3d(0, 0, 75px);
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(134deg, rgb(248, 27, 0), rgb(248, 97, 0));
+  padding: 10px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.5s;
+  opacity: 1;
+  z-index: 10;
+  text-align: center;
+  margin: 0 auto;
+  border: 0px;
+}
+.box:hover .team-detail {
+  bottom: 30px;
+  opacity: 1;
+}
+.box .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transition: 0.5s;
+  background: white;
+  transform-style: preserve-3d;
+  transform: translate3d(-50%, -50%, 50px);
+  opacity: 1;
+  z-index: 10;
+}
+.box .team-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 200px;
+  z-index: 11;
+  transition: 0.5s;
+  transform: translate3d(-50%, -50%, 0px);
+}
+
+body {
+  font: 400 15px Lato, sans-serif;
+  line-height: 1.8;
+  color: #818181;
+}
+h2 {
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #303030;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+h4 {
+  font-size: 19px;
+  line-height: 1.375em;
+  color: #303030;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+.jumbotron {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../images/wp7486034.jpg");
+
+  color: #fff;
+  padding: 100px 25px;
+  font-family: Montserrat, sans-serif;
+}
+.container-fluid {
+  padding: 60px 50px;
+}
+.bg-grey {
+  background-color: #f6f6f6;
+}
+.logo-small {
+  color: #f4511e;
+  font-size: 50px;
+}
+.logo {
+  color: #f4511e;
+  font-size: 200px;
+}
+.thumbnail {
+  padding: 0 0 15px 0;
+  border: none;
+  border-radius: 0;
+}
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 10px;
+}
+.carousel-control.right,
+.carousel-control.left {
+  background-image: none;
+  color: #f4511e;
+}
+.carousel-indicators li {
+  border-color: #f4511e;
+}
+.carousel-indicators li.active {
+  background-color: #f4511e;
+}
+.item h4 {
+  font-size: 19px;
+  line-height: 1.375em;
+  font-weight: 400;
+  font-style: italic;
+  margin: 70px 0;
+}
+.item span {
+  font-style: normal;
+}
+.panel {
+  border: 1px solid #f4511e;
+  border-radius: 0 !important;
+  transition: box-shadow 0.5s;
+}
+.panel:hover {
+  box-shadow: 5px 0px 40px rgba(0, 0, 0, 0.2);
+}
+.panel-footer .btn:hover {
+  border: 1px solid #f4511e;
+  background-color: #fff !important;
+  color: #f4511e;
+}
+.panel-heading {
+  color: #fff !important;
+  background-color: #f4511e !important;
+  padding: 25px;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.panel-footer {
+  background-color: white !important;
+}
+.panel-footer h3 {
+  font-size: 32px;
+}
+.panel-footer h4 {
+  color: #aaa;
+  font-size: 14px;
+}
+.panel-footer .btn {
+  margin: 15px 0;
+  background-color: #f4511e;
+  color: #fff;
+}
+.navbar {
+  margin-bottom: 0;
+  background-color: #f4511e;
+  z-index: 9999;
+  border: 0;
+  font-size: 12px !important;
+  line-height: 1.42857143 !important;
+  letter-spacing: 1px;
+  border-radius: 0;
+  font-family: Montserrat, sans-serif;
+}
+.navbar li a,
+.navbar .navbar-brand {
+  color: #fff !important;
+}
+.navbar-nav li a:hover,
+.navbar-nav li.active a {
+  color: #f4511e !important;
+  background-color: #fff !important;
+}
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+  color: #fff !important;
+}
+footer .glyphicon {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+.slideanim {
+  visibility: hidden;
+}
+.slide {
+  animation-name: slide;
+  -webkit-animation-name: slide;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  visibility: visible;
+}
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateY(70%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@-webkit-keyframes slide {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(70%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+  }
+}
+@media screen and (max-width: 768px) {
+  .col-sm-4 {
+    text-align: center;
+    margin: 25px 0;
+  }
+  .btn-lg {
+    width: 100%;
+    margin-bottom: 35px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .logo {
+    font-size: 150px;
+  }
+}
+
+.float-label-control {
+  position: relative;
+  margin-bottom: 1.5em;
+}
+.float-label-control ::-webkit-input-placeholder {
+  color: transparent;
+}
+.float-label-control :-moz-placeholder {
+  color: transparent;
+}
+.float-label-control ::-moz-placeholder {
+  color: transparent;
+}
+.float-label-control :-ms-input-placeholder {
+  color: transparent;
+}
+.float-label-control input:-webkit-autofill,
+.float-label-control textarea:-webkit-autofill {
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  -moz-box-shadow: 0 0 0 1000px white inset !important;
+  box-shadow: 0 0 0 1000px white inset !important;
+}
+.float-label-control input,
+.float-label-control textarea,
+.float-label-control label {
+  font-size: 1.3em;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+.float-label-control input:focus,
+.float-label-control textarea:focus {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  border-bottom-width: 2px;
+  padding-bottom: 0;
+}
+.float-label-control textarea:focus {
+  padding-bottom: 4px;
+}
+.float-label-control input,
+.float-label-control textarea {
+  display: block;
+  width: 100%;
+  padding: 0.1em 0em 1px 0em;
+  border: none;
+  border-radius: 0px;
+  border-bottom: 1px solid #aaa;
+  outline: none;
+  margin: 0px;
+  background: none;
+}
+.float-label-control textarea {
+  padding: 0.1em 0em 5px 0em;
+}
+.float-label-control label {
+  position: absolute;
+  font-weight: normal;
+  top: -1em;
+  left: 0.08em;
+  color: #aaaaaa;
+  z-index: -1;
+  font-size: 0.85em;
+  -moz-animation: float-labels 300ms none ease-out;
+  -webkit-animation: float-labels 300ms none ease-out;
+  -o-animation: float-labels 300ms none ease-out;
+  -ms-animation: float-labels 300ms none ease-out;
+  -khtml-animation: float-labels 300ms none ease-out;
+  animation: float-labels 300ms none ease-out; /* There is a bug sometimes pausing the animation. This avoids that.*/
+  animation-play-state: running !important;
+  -webkit-animation-play-state: running !important;
+}
+.float-label-control input.empty + label,
+.float-label-control textarea.empty + label {
+  top: 0.1em;
+  font-size: 1.5em;
+  animation: none;
+  -webkit-animation: none;
+}
+.float-label-control input:not(.empty) + label,
+.float-label-control textarea:not(.empty) + label {
+  z-index: 1;
+}
+.float-label-control input:not(.empty):focus + label,
+.float-label-control textarea:not(.empty):focus + label {
+  color: #aaaaaa;
+}
+.float-label-control.label-bottom label {
+  -moz-animation: float-labels-bottom 300ms none ease-out;
+  -webkit-animation: float-labels-bottom 300ms none ease-out;
+  -o-animation: float-labels-bottom 300ms none ease-out;
+  -ms-animation: float-labels-bottom 300ms none ease-out;
+  -khtml-animation: float-labels-bottom 300ms none ease-out;
+  animation: float-labels-bottom 300ms none ease-out;
+}
+.float-label-control.label-bottom input:not(.empty) + label,
+.float-label-control.label-bottom textarea:not(.empty) + label {
+  top: 3em;
+}
+
+@keyframes float-labels {
+  0% {
+    opacity: 1;
+    color: #aaa;
+    top: 0.1em;
+    font-size: 1.5em;
+  }
+  20% {
+    font-size: 1.5em;
+    opacity: 0;
+  }
+  30% {
+    top: 0.1em;
+  }
+  50% {
+    opacity: 0;
+    font-size: 0.85em;
+  }
+  100% {
+    top: -1em;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes float-labels {
+  0% {
+    opacity: 1;
+    color: #aaa;
+    top: 0.1em;
+    font-size: 1.5em;
+  }
+  20% {
+    font-size: 1.5em;
+    opacity: 0;
+  }
+  30% {
+    top: 0.1em;
+  }
+  50% {
+    opacity: 0;
+    font-size: 0.85em;
+  }
+  100% {
+    top: -1em;
+    opacity: 1;
+  }
+}
+
+@keyframes float-labels-bottom {
+  0% {
+    opacity: 1;
+    color: #aaa;
+    top: 0.1em;
+    font-size: 1.5em;
+  }
+  20% {
+    font-size: 1.5em;
+    opacity: 0;
+  }
+  30% {
+    top: 0.1em;
+  }
+  50% {
+    opacity: 0;
+    font-size: 0.85em;
+  }
+  100% {
+    top: 3em;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes float-labels-bottom {
+  0% {
+    opacity: 1;
+    color: #aaa;
+    top: 0.1em;
+    font-size: 1.5em;
+  }
+  20% {
+    font-size: 1.5em;
+    opacity: 0;
+  }
+  30% {
+    top: 0.1em;
+  }
+  50% {
+    opacity: 0;
+    font-size: 0.85em;
+  }
+  100% {
+    top: 3em;
+    opacity: 1;
+  }
+}
+
+.teamimage img {
+  max-width: 100%;
+  width: 200px;
+}
+
+.cardcus {
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  height: 350px;
+  background: #122936;
+  border-bottom: 20px;
+  overflow: hidden;
+}
+.cardcus::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background: attr(data-background);
+  transform: skewy(345deg);
+  transition: 0.5s;
+  color: white;
+  font-weight: bold;
+}
+.cardcus:hover::before {
+  top: -70%;
+  transform: skewY(390deg);
+}
+
+.cardcus::after {
+  content: "";
+}
+.cardcus:hover::before {
+  top: -70%;
+  transform: skewY(390deg);
+}
+.cardcus .imgbox {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+.cardcus .imgbox img {
+  max-width: 100%;
+  transition: 0.5s;
+}
+.cardcus:hover .imgbox img {
+  max-width: 90%;
+}
+.contentbox {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.summery {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+.summery div {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.cardcus .name {
+  color: white;
+  margin: 0px;
+}
+.cardcus .player-detail {
+  position: absolute;
+  display: block;
+  bottom: 0px;
+  width: 80%;
+  left: 10%;
+  transform-style: preserve-3d;
+  transform: translate3d(0, 0, 75px);
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(134deg, rgb(248, 27, 0), rgb(248, 97, 0));
+  padding: 10px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.5s;
+  opacity: 0;
+  z-index: 10;
+}
+.cardcus:hover .player-detail {
+  bottom: 30px;
+  opacity: 1;
+}
+.playerdescription h1 {
+  font-size: 60px;
+  font-weight: bold;
+  color: white !important;
+}
+#playerdetails {
+  
+  padding: 40px 40px 0 40px;
+  background: rgb(125, 119, 207);
+}
+#playerdetails img{    width: 100%;}
+
+.score h1 {
+  font-size: 20px;
+  font-weight: bold;
+  color: white !important;
+}
+#playerdetails h2{
+  color: white !important;
+}
+.score span {
+  font-size: 60px;
+  font-weight: bold;
+  color: white !important;
+}
+footer {
+  background: #f4511e;
+  color: white;
+  padding: 0px !important;
+}
+footer p {
+  margin: 0 0 20px;
+}
+.cardcus,
+.box {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.section-heading {
+  font-size: 40px;
+  color: black;
+}
+
+.page-section{
+  padding-top: 80px;
+}
