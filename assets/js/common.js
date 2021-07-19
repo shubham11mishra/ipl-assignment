@@ -58,39 +58,39 @@ $(document).ready(() => {
       max: 25,
       speed: 400,
     });
-  });
-  // fetching Player data from player.json
-  $.getJSON("./assets/player.json", (data) => {
-    //console.log(JSON.stringify(data))
-    if (!localStorage.getItem("players")) {
-      localStorage.setItem("players", JSON.stringify(data));
-    }
-    var items_json = localStorage.getItem("players");
-    players = JSON.parse(items_json);
-  });
 
-  // sort player according to run
-  teams = JSON.parse(localStorage.getItem("teams"));
-  players = JSON.parse(localStorage.getItem("players"));
-  topbat = players.sort(function (b, a) {
-    var keyA = a.runScore,
-      keyB = b.runScore;
+    // fetching Player data from player.json
+    $.getJSON("./assets/player.json", (data) => {
+      //console.log(JSON.stringify(data))
+      if (!localStorage.getItem("players")) {
+        localStorage.setItem("players", JSON.stringify(data));
+      }
+      var items_json = localStorage.getItem("players");
+      players = JSON.parse(items_json);
 
-    if (keyA < keyB) return -1;
-    if (keyA > keyB) return 1;
-    return 0;
-  });
-  var getTeamDetail = (teamid) => {
-    return teams.filter((team) => team.key == teamid);
-  };
-  let batcount = 1;
-  topbat.forEach((player) => {
-    if (batcount > 4) {
-      return false;
-    }
-    batcount++;
-    let teamD = getTeamDetail(player.from);
-    $("#topbat").append(`
+
+    // sort player according to run
+    teams = JSON.parse(localStorage.getItem("teams"));
+    players = JSON.parse(localStorage.getItem("players"));
+    topbat = players.sort(function (b, a) {
+      var keyA = a.runScore,
+        keyB = b.runScore;
+
+      if (keyA < keyB) return -1;
+      if (keyA > keyB) return 1;
+      return 0;
+    });
+    var getTeamDetail = (teamid) => {
+      return teams.filter((team) => team.key == teamid);
+    };
+    let batcount = 1;
+    topbat.forEach((player) => {
+      if (batcount > 4) {
+        return false;
+      }
+      batcount++;
+      let teamD = getTeamDetail(player.from);
+      $("#topbat").append(`
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
           <a href="./player-details.html?id=${player.id}">
           <div class="cardcus" id="player${player.id}">
@@ -118,34 +118,34 @@ $(document).ready(() => {
         </div>
   
     `);
-    $("body").append(
-      `<style>#player${player.id}::before{background:linear-gradient(134deg,${teamD[0].color} ,${teamD[0].color})}</style>`
-    );
-  });
+      $("body").append(
+        `<style>#player${player.id}::before{background:linear-gradient(134deg,${teamD[0].color} ,${teamD[0].color})}</style>`
+      );
+    });
 
-  //sort player according to wicket
-  topbowl = players.sort(function (b, a) {
-    var keyA = a.Wicket,
-      keyB = b.Wicket;
+    //sort player according to wicket
+    topbowl = players.sort(function (b, a) {
+      var keyA = a.Wicket,
+        keyB = b.Wicket;
 
-    if (keyA < keyB) return -1;
-    if (keyA > keyB) return 1;
-    return 0;
-  });
-  var getTeamDetail = (teamid) => {
-    return teams.filter((team) => team.key == teamid);
-  };
+      if (keyA < keyB) return -1;
+      if (keyA > keyB) return 1;
+      return 0;
+    });
+    var getTeamDetail = (teamid) => {
+      return teams.filter((team) => team.key == teamid);
+    };
 
-  let bowlercount = 1;
-  topbowl.forEach((player) => {
-    if (bowlercount > 4) {
-     return false;
-    }
-   
-    bowlercount++;
+    let bowlercount = 1;
+    topbowl.forEach((player) => {
+      if (bowlercount > 4) {
+        return false;
+      }
 
-    let teamD = getTeamDetail(player.from);
-    $("#topbowler").append(`
+      bowlercount++;
+
+      let teamD = getTeamDetail(player.from);
+      $("#topbowler").append(`
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
           <a href="./player-details.html?id=${player.id}">
           <div class="cardcus" id="player${player.id}">
@@ -173,13 +173,15 @@ $(document).ready(() => {
         </div>
   
     `);
-    $("body").append(
-      `<style>#player${player.id}::before{background:linear-gradient(134deg,${teamD[0].color} ,${teamD[0].color})}</style>`
-    );
-  });
+      $("body").append(
+        `<style>#player${player.id}::before{background:linear-gradient(134deg,${teamD[0].color} ,${teamD[0].color})}</style>`
+      );
+    });
 
-  VanillaTilt.init(document.querySelectorAll(".cardcus"), {
-    max: 25,
-    speed: 400,
+    VanillaTilt.init(document.querySelectorAll(".cardcus"), {
+      max: 25,
+      speed: 400,
+    });
   });
+});
 });
