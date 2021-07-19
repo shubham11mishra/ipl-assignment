@@ -7,6 +7,7 @@ $(document).ready(function () {
     formJSON['id']=(teams.length+1);
     teams.push(formJSON);
     localStorage.setItem("teams", JSON.stringify(teams));
-    console.log(teams);
+    $('#teamform').trigger("reset");
+    alert('Team Added Successfully')
   });
 });
