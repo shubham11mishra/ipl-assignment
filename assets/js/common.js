@@ -37,7 +37,7 @@ $(document).ready(() => {
 
     teams.forEach((team) => {
       $("#teamlist").append(`
-        <div class="col-xs-6 col-sm-12 col-md-6 col-lg-3">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
         <a href="./team-details.html?id=${team.key}">
         <div class="box" id="team${team.id}">
           <h2 class="name">${team.fullName}</h2>
@@ -183,6 +183,6 @@ $(document).ready(() => {
       speed: 400,
     });
   });
-  
+
 });
 });
