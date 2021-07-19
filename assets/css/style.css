@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 * {
   font-family: "Poppins", sans-serif;
 }
-h1,h2,h3{
-  font-family: 'Oswald', sans-serif;
+h1,
+h2,
+h3 {
+  font-family: "Oswald", sans-serif;
   letter-spacing: 4px;
 }
 a:hover {
@@ -78,10 +80,9 @@ a:hover {
   opacity: 0;
   z-index: 10;
 }
-.btncus{
- 
+.btncus {
   display: block;
- 
+
   transform-style: preserve-3d;
   transform: translate3d(0, 0, 75px);
   color: #fff;
@@ -616,18 +617,19 @@ footer .glyphicon {
   color: white !important;
 }
 #playerdetails {
-  
   padding: 40px 40px 0 40px;
   background: rgb(125, 119, 207);
 }
-#playerdetails img{    width: 100%;}
+#playerdetails img {
+  width: 100%;
+}
 
 .score h1 {
   font-size: 20px;
   font-weight: bold;
   color: white !important;
 }
-#playerdetails h2{
+#playerdetails h2 {
   color: white !important;
 }
 .score span {
@@ -653,6 +655,35 @@ footer p {
   color: black;
 }
 
-.page-section{
+.page-section {
   padding-top: 80px;
+}
+
+@media screen and (max-width: 768px) {
+  .cardcus {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .jumbotron {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url(../images/wp7486034.jpg);
+    color: #fff;
+    background-position: center center;
+    background-size: cover;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+  }
+  .box .name {
+    top: 20px;
+    opacity: 1;
+    z-index: 10;
+    font-size: 24px;
+}
+.box .team-detail {
+  bottom: 30px;
+  opacity: 1;
+ 
+}
 }

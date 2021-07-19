@@ -53,11 +53,11 @@
     </nav>
     <div class="jumbotron text-center">
       <div class="row" id="teamdetail">
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-6 detail">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 detail">
           <h1></h1>
           <p></p>
         </div>
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-6 teamimage">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6  teamimage">
           <img
             src="https://i.pinimg.com/originals/28/09/a8/2809a841bb08827603ccac5c6aee8b33.png"
             alt=""
@@ -108,12 +108,12 @@
 
        
         $("#teamdetail")
-          .html(` <div class="col-xs-3 col-sm-3 col-md-3 col-lg-6 detail">
+          .html(` <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 detail">
             <h1>${teamDetail[0].fullName}</h1>
             <p>Championship Won : ${teamDetail[0].championshipWon}</p>
             
           </div>
-          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-6 teamimage">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 teamimage">
             <img
               src="${teamDetail[0].teamIcon}"
               alt="${teamDetail[0].fullName}"
