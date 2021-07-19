@@ -19,6 +19,8 @@ $(document).ready(function () {
     players.push(formJSON);
     localStorage.setItem("players", JSON.stringify(players));
     $("#playerform").trigger("reset");
+    
     alert("Player Added Successfully");
+
   });
 });

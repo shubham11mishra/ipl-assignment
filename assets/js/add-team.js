@@ -8,6 +8,8 @@ $(document).ready(function () {
     teams.push(formJSON);
     localStorage.setItem("teams", JSON.stringify(teams));
     $('#teamform').trigger("reset");
+    
     alert('Team Added Successfully')
+
   });
 });
